@@ -7,3 +7,5 @@ langchain-openai
 google-generativeai
 pdf2image
 pyPDF2
+streamlit_option_menu
+pydantic
