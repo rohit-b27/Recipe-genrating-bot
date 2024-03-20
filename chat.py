@@ -10,14 +10,15 @@ from langchain.chains import SimpleSequentialChain
 from langchain_openai import ChatOpenAI
 from langchain.schema import HumanMessage,SystemMessage,AIMessage
 import streamlit as st 
-
+from dotenv import load_dotenv
+load_dotenv()
 
 
 def app():
     #streamlit UI 
  st.header("Welcome to cooking-zone")
 
- chat = ChatOpenAI(model="gpt-3.5-turbo",api_key=os.environ['openai_api_key'],temperature=0.6,verbose=True)
+ chat = ChatOpenAI(model="gpt-3.5-turbo",api_key=os.getenv('openai_api_key'),temperature=0.6,verbose=True)
  
 
  if 'session' not in  st.session_state:

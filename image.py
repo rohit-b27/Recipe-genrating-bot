@@ -2,13 +2,15 @@ import streamlit as st
 import google.generativeai as genai 
 from PIL import Image
 import os 
+from dotenv import load_dotenv
+load_dotenv()
 
 
 
 
 
 def app():
-    genai.configure(api_key = os.environ['google_api_key'])
+    genai.configure(api_key = os.getenv('google_api_key'))
     
     ## loading gemini pro vision 
     model = genai.GenerativeModel('gemini-pro-vision')
