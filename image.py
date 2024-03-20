@@ -43,17 +43,29 @@ def app():
         image = Image.open(file_uploaded)
         st.image(image, caption="uploaded Image.", use_column_width=True)
     submit = st.button("Generate the Recipe")
+    submit1 = st.button("Nutritional-Value")
     
     input_prompt = """ You are a professional multi-cusine international Chef. 
     We will upload an image of a dish, and you have to generate the recipe of the dish,
     based on the input prompt. If there is no prompt given generate the dish name, ingredients required 
     and recipe steps as a default procedure."""
     
+    nutritional_prompt = """ You are an expert nutritionist, where you need to extract the food items from the image and
+    give the calorie count of each ingredient and mention nutritional composition, i.e percentage of protients, carbohydrates, fats, fibers,
+    vitamins, minerals, etc, in the dish. If any prompt is given by user tailor the response accordingly."""
+    
     if submit:
         image_data = input_image_details(file_uploaded)
         response = get_gemini_response(input_prompt, image_data, input)
-        st.subheader("Here is the response: ")
+        st.subheader("Response: ")
         st.write(response)
+        
+    if submit1:
+        image_data = input_image_details(file_uploaded)
+        response = get_gemini_response(nutritional_prompt, image_data, input)
+        st.subheader("Response: ")
+        st.write(response)
+        
     
         
         
