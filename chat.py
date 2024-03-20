@@ -10,8 +10,7 @@ from langchain.chains import SimpleSequentialChain
 from langchain_openai import ChatOpenAI
 from langchain.schema import HumanMessage,SystemMessage,AIMessage
 import streamlit as st 
-import google.generativeai as genai 
-from PIL import Image
+
 
 
 def app():
