@@ -17,4 +17,4 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push https://rb27:$HF_TOKEN@huggingface.co/spaces/rb27/Recipe-generating-bot main
+        run: git push --force https://rb27:$HF_TOKEN@huggingface.co/spaces/rb27/Recipe-generating-bot main
