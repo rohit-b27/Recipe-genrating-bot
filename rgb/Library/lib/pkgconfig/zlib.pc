@@ -1,0 +1,13 @@
+prefix=D:/projects/Recipe-genrating-bot/rgb/Library
+exec_prefix=D:/projects/Recipe-genrating-bot/rgb/Library
+libdir=D:/projects/Recipe-genrating-bot/rgb/Library/lib
+sharedlibdir=D:/projects/Recipe-genrating-bot/rgb/Library/lib
+includedir=D:/projects/Recipe-genrating-bot/rgb/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
